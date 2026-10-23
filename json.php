@@ -1,81 +1,61 @@
 <?php
-    //
-    // vnStat PHP frontend (c)2006-2010 Bjorge Dijkstra (bjd@jooz.net)
-    //
-    // This program is free software; you can redistribute it and/or modify
-    // it under the terms of the GNU General Public License as published by
-    // the Free Software Foundation; either version 2 of the License, or
-    // (at your option) any later version.
-    //
-    // This program is distributed in the hope that it will be useful,
-    // but WITHOUT ANY WARRANTY; without even the implied warranty of
-    // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    // GNU General Public License for more details.
-    //
-    // You should have received a copy of the GNU General Public License
-    // along with this program; if not, write to the Free Software
-    // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-    //
-    //
-    // see file COPYING or at http://www.gnu.org/licenses/gpl.html
-    // for more information.
-    //
-    require 'config.php';
-    require 'localize.php';
-    require 'vnstat.php';
+//
+// JSON data endpoint — returns parsed vnstat data as JSON
+//
+include 'config.php';
+include 'localize.php';
+include 'vnstat.php';
 
-    validate_input();
+validate_input();
+include "./themes/$_style/theme.php";
 
-    require "./themes/$style/theme.php";
+function _write_summary()
+{
+    global $_summary, $_top, $_day, $_hour, $_month;
 
-    function write_summary()
+    $trx = $_summary['totalrx'] * 1024 + $_summary['totalrxk'];
+    $ttx = $_summary['totaltx'] * 1024 + $_summary['totaltxk'];
+
+    $sum = array();
+    if (count($_day) > 0 && count($_hour) > 0 && count($_month) > 0)
     {
-        global $summary,$top,$day,$hour,$month;
-
-        $trx = $summary['totalrx']*1024+$summary['totalrxk'];
-        $ttx = $summary['totaltx']*1024+$summary['totaltxk'];
-
-        //
-        // build array for write_data_table
-        //
-        $sum['hour']['act'] = 1;
-        $sum['hour']['rx'] = $hour[0]['rx'];
-        $sum['hour']['tx'] = $hour[0]['tx'];
-
-        $sum['day']['act'] = 1;
-        $sum['day']['rx'] = $day[0]['rx'];
-        $sum['day']['tx'] = $day[0]['tx'];
-
-        $sum['month']['act'] = 1;
-        $sum['month']['rx'] = $month[0]['rx'];
-        $sum['month']['tx'] = $month[0]['tx'];
-
-        $sum['total']['act'] = 1;
-        $sum['total']['rx'] = $trx;
-        $sum['total']['tx'] = $ttx;
-
-        print json_encode($sum);
+        $sum['hour']    = array('act' => 1, 'rx' => $_hour[0]['rx'],  'tx' => $_hour[0]['tx']);
+        $sum['day']     = array('act' => 1, 'rx' => $_day[0]['rx'],   'tx' => $_day[0]['tx']);
+        $sum['month']   = array('act' => 1, 'rx' => $_month[0]['rx'], 'tx' => $_month[0]['tx']);
+        $sum['total']   = array('act' => 1, 'rx' => $trx,              'tx' => $ttx);
     }
 
+    print json_encode($sum);
+}
 
-    get_vnstat_data(false);
+get_vnstat_data(false);
+header('Content-type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('X-Content-Type-Options: nosniff');
 
-    header('Content-type: application/json; charset=utf-8');
-    $graph_params = "if=$iface&amp;page=$page&amp;style=$style";
-    if ($page == 's')
-    {
-        write_summary();
-    }
-    else if ($page == 'h')
-    {
-      print json_encode(array('hours' => $hour));
-    }
-    else if ($page == 'd')
-    {
-      print json_encode(array('days' => $day));
-    }
-    else if ($page == 'm')
-    {
-      print json_encode(array('months' => $month));
-    }
-    ?>
+// Convert associative arrays to sequential for JSON output
+function _seq($assoc)
+{
+    $keys = array_keys($assoc);
+    rsort($keys);
+    $out = array();
+    foreach ($keys as $k)
+        $out[count($out)] = $assoc[$k];
+    return $out;
+}
+
+$_hour  = _seq($_hour);
+$_day   = _seq($_day);
+$_month = _seq($_month);
+
+$qp = "if=$_iface&page=$_page&style=$_style";
+
+if ($_page == 's')
+    _write_summary();
+elseif ($_page == 'h')
+    print json_encode(array('hours' => $_hour));
+elseif ($_page == 'd')
+    print json_encode(array('days' => $_day));
+elseif ($_page == 'm')
+    print json_encode(array('months' => $_month));
+?>

@@ -1,39 +1,39 @@
 <?php
 
 // sidebar labels
-$L['summary'] = 'Összegzés';
-$L['hours'] = 'órák';
-$L['days'] = 'napok';
-$L['months'] = 'hónapok';
+$_L['summary'] = 'Összegzés';
+$_L['hours'] = 'órák';
+$_L['days'] = 'napok';
+$_L['months'] = 'hónapok';
 
 // main table headers
-$L['Summary'] = 'Öszegzés';
-$L['Top 10 days'] = 'Legjobb 10 nap';
-$L['Last 24 hours'] = 'Utolsó 24 óra';
-$L['Last 30 days'] = 'Utolsó 30 nap';
-$L['Last 12 months'] = 'Utolsó 12 hónap';
+$_L['Summary'] = 'Öszegzés';
+$_L['Top 10 days'] = 'Legjobb 10 nap';
+$_L['Last 24 hours'] = 'Utolsó 24 óra';
+$_L['Last 30 days'] = 'Utolsó 30 nap';
+$_L['Last 12 months'] = 'Utolsó 12 hónap';
 
 // traffic table columns
-$L['In'] = 'Bejövő';
-$L['Out'] = 'Kimenő';
-$L['Total'] = 'Összesen';
+$_L['In'] = 'Bejövő';
+$_L['Out'] = 'Kimenő';
+$_L['Total'] = 'Összesen';
 
 // summary rows
-$L['This hour'] = 'Ebben az órában';
-$L['This day'] = 'Ezen a napon';
-$L['This month'] = 'Ebben a hónapban';
-$L['All time'] = 'Összesen';
+$_L['This hour'] = 'Ebben az órában';
+$_L['This day'] = 'Ezen a napon';
+$_L['This month'] = 'Ebben a hónapban';
+$_L['All time'] = 'Összesen';
 
 // graph text
-$L['Traffic data for'] = 'Forgalmi adatok: ';
-$L['bytes in'] = 'bejövő bájtok';
-$L['bytes out'] = 'kimenő bájtok';
+$_L['Traffic data for'] = 'Forgalmi adatok: ';
+$_L['bytes in'] = 'bejövő bájtok';
+$_L['bytes out'] = 'kimenő bájtok';
 
 // date formats
-$L['datefmt_days'] = '%d %B';
-$L['datefmt_days_img'] = '%d';
-$L['datefmt_months'] = '%B %Y';
-$L['datefmt_months_img'] = '%b';
-$L['datefmt_hours'] = '%l%p';
-$L['datefmt_hours_img'] = '%l';
-$L['datefmt_top'] = '%d %B %Y';
+$_L['datefmt_days'] = '%d %B';
+$_L['datefmt_days_img'] = '%d';
+$_L['datefmt_months'] = '%B %Y';
+$_L['datefmt_months_img'] = '%b';
+$_L['datefmt_hours'] = '%l%p';
+$_L['datefmt_hours_img'] = '%l';
+$_L['datefmt_top'] = '%d %B %Y';

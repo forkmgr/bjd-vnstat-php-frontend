@@ -1,39 +1,39 @@
 <?php
 
 // sidebar labels
-$L['summary'] = 'sažetak';  // summary
-$L['hours'] = 'sati';
-$L['days'] = 'dani';
-$L['months'] = 'mjeseci';
+$_L['summary'] = 'sažetak';  // summary
+$_L['hours'] = 'sati';
+$_L['days'] = 'dani';
+$_L['months'] = 'mjeseci';
 
 // main table headers
-$L['Summary'] = 'Sažetak';
-$L['Top 10 days'] = '10 naprometnijih dana'; 
-$L['Last 24 hours'] = 'Zadnja 24 sata';
-$L['Last 30 days'] = 'Zadnjih 30 dana';
-$L['Last 12 months'] = 'Zadnjih 12 mjeseci';
+$_L['Summary'] = 'Sažetak';
+$_L['Top 10 days'] = '10 naprometnijih dana'; 
+$_L['Last 24 hours'] = 'Zadnja 24 sata';
+$_L['Last 30 days'] = 'Zadnjih 30 dana';
+$_L['Last 12 months'] = 'Zadnjih 12 mjeseci';
 
 // traffic table columns
-$L['In'] = 'Primljeno';  
-$L['Out'] = 'Poslano'; 
-$L['Total'] = 'Ukupno'; // Total
+$_L['In'] = 'Primljeno';  
+$_L['Out'] = 'Poslano'; 
+$_L['Total'] = 'Ukupno'; // Total
 
 // summary rows
-$L['This hour'] = 'Tekući sat';
-$L['This day'] = 'Danas';
-$L['This month'] = 'Tekući mjesec';
-$L['All time'] = 'Sveukupno'; 
+$_L['This hour'] = 'Tekući sat';
+$_L['This day'] = 'Danas';
+$_L['This month'] = 'Tekući mjesec';
+$_L['All time'] = 'Sveukupno'; 
 
 // graph text
-$L['Traffic data for'] = 'Promet za';
-$L['bytes in'] = 'bajta primljeno';
-$L['bytes out'] = 'bajta poslano';
+$_L['Traffic data for'] = 'Promet za';
+$_L['bytes in'] = 'bajta primljeno';
+$_L['bytes out'] = 'bajta poslano';
 
 // date formats
-$L['datefmt_days'] = '%d. %m'; 
-$L['datefmt_days_img'] = '%d';
-$L['datefmt_months'] = '%m.%Y'; 
-$L['datefmt_months_img'] = '%b';
-$L['datefmt_hours'] = '%H';  // %k
-$L['datefmt_hours_img'] = '%H';
-$L['datefmt_top'] = '%d.%m.%Y';
+$_L['datefmt_days'] = '%d. %m'; 
+$_L['datefmt_days_img'] = '%d';
+$_L['datefmt_months'] = '%m.%Y'; 
+$_L['datefmt_months_img'] = '%b';
+$_L['datefmt_hours'] = '%H';  // %k
+$_L['datefmt_hours_img'] = '%H';
+$_L['datefmt_top'] = '%d.%m.%Y';

@@ -1,39 +1,39 @@
 <?php
 
 // sidebar labels
-$L['summary'] = 'Sommaire';
-$L['hours'] = 'Heures';
-$L['days'] = 'Jours';
-$L['months'] = 'Mois';
+$_L['summary'] = 'Sommaire';
+$_L['hours'] = 'Heures';
+$_L['days'] = 'Jours';
+$_L['months'] = 'Mois';
 
 // main table headers
-$L['Summary'] = 'Sommaire';
-$L['Top 10 days'] = 'Les 10 meilleurs jours';
-$L['Last 24 hours'] = 'Dernières 24 heures';
-$L['Last 30 days'] = 'Derniers 30 jours';
-$L['Last 12 months'] = 'Les 12 derniers mois';
+$_L['Summary'] = 'Sommaire';
+$_L['Top 10 days'] = 'Les 10 meilleurs jours';
+$_L['Last 24 hours'] = 'Dernières 24 heures';
+$_L['Last 30 days'] = 'Derniers 30 jours';
+$_L['Last 12 months'] = 'Les 12 derniers mois';
 
 // traffic table columns
-$L['In'] = 'Entrant';
-$L['Out'] = 'Sortant';
-$L['Total'] = 'Total';
+$_L['In'] = 'Entrant';
+$_L['Out'] = 'Sortant';
+$_L['Total'] = 'Total';
 
 // summary rows
-$L['This hour'] = 'Cette heure';
-$L['This day'] = 'Aujourd\' hui';
-$L['This month'] = 'Ce mois';
-$L['All time'] = 'Tout temps';
+$_L['This hour'] = 'Cette heure';
+$_L['This day'] = 'Aujourd\' hui';
+$_L['This month'] = 'Ce mois';
+$_L['All time'] = 'Tout temps';
 
 // graph text
-$L['Traffic data for'] = 'Traffic de donnée pour :';
-$L['bytes in'] = 'bytes entrants';
-$L['bytes out'] = 'bytes sortants';
+$_L['Traffic data for'] = 'Traffic de donnée pour :';
+$_L['bytes in'] = 'bytes entrants';
+$_L['bytes out'] = 'bytes sortants';
 
 // date formats
-$L['datefmt_days'] = '%d %B';
-$L['datefmt_days_img'] = '%d';
-$L['datefmt_months'] = '%B %Y';
-$L['datefmt_months_img'] = '%b';
-$L['datefmt_hours'] = '%Hh%M';
-$L['datefmt_hours_img'] = '%H';
-$L['datefmt_top'] = '%d %B %Y';
+$_L['datefmt_days'] = '%d %B';
+$_L['datefmt_days_img'] = '%d';
+$_L['datefmt_months'] = '%B %Y';
+$_L['datefmt_months_img'] = '%b';
+$_L['datefmt_hours'] = '%Hh%M';
+$_L['datefmt_hours_img'] = '%H';
+$_L['datefmt_top'] = '%d %B %Y';
